@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Conversiones con Bootstrap y JavaScript">
+        <meta name="keywords" content="Conversiones de Temperatura, Longitud, Divisas">
+        <meta name="author" content="Nayeli Torres Hernández">
+
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css" crossorigin="anonymous">
+
+        <title>Conversiones</title>
+    </head>
+    <body>
+
+        <div class=" jumbotron container-fluid bg-info">
+            <h1 class="text-center"> Conversiones de Temperatura, Longitud, Divisas </h1>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <!--Temperatura-->
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-header bg-primary">
+                            <h5 class="card-title text-white text-center">Conversión de Temperatura</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="form">
+                                <div class="form-inline">
+                                    <label>Grados:</label>
+                                    <input id="txtN1" class="form-control" type="text" placeholder="Centigrados Celsius"/>
+                                    °C
+                                </div>
+                                <div class="form-inline mt-3">
+                                    <button id="btnFahrenheit" class="btn btn-primary ml-3" onclick="realizarConversion(1);">Fahrenheit</button>
+                                    <button id="btnKelvin" class="btn btn-primary ml-3" onclick="realizarConversion(2);">Kelvin</button>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input id="txtResultado" placeholder="Resultado" type="text" class="form-control"/>
+                                </div>
+                                <div>
+                                    <span class=" border border-info badge badge-pill bg-light ml-4">1°C = 33.8 °F</span>
+                                    <span class="border border-info badge badge-pill bg-light ml-4">1°C = 274.15 K</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                        
+                </div>
+                <!-- Longitud-->
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-header bg-success">
+                            <h5 class="card-title text-white text-center">Conversión de Longitud</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="form">
+                                <div class="form-inline">
+                                    <label class="ml-4">Centímentros:</label>
+                                    <input id="txtNumero" type="text" class="form-control text-center" 
+                                           placeholder=" Centímentros cm "/>
+                                    cm
+                                </div>
+                                <div class="form-inline mt-3">
+                                    <button id="btnPulgada" class="btn btn-success ml-2" onclick="coversionLongitud(1);">Pulgadas</button>
+                                    <button id="btnPie" class="btn btn-success ml-4" onclick="coversionLongitud(2);">Pies</button>
+                                    <button id="btnYarda" class="btn btn-success ml-4" onclick="coversionLongitud(3);">Yardas</button>
+                                    <button id="btnMilla" class="btn btn-success ml-4" onclick="coversionLongitud(4);">Millas</button>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input id="txtResultado1" placeholder="Resultado" type="text" class="form-control"/>
+                                    <div>
+                                        <span class=" border border-success badge badge-pill bg-light ">1cm=0.3937"</span>
+                                        <span class=" border border-success badge badge-pill bg-light ">1cm=0.0328'</span>
+                                        <span class=" border border-success badge badge-pill bg-light ">1cm=0.0109 yd</span>
+                                        <span class=" border border-success badge badge-pill bg-light ">1cm=6.2e-6 mi</span>
+                                    </div>
+                                    <div>
+                                        <span class=" border border-success badge badge-pill bg-light my-2">1"=2.54cm</span>
+                                        <span class=" border border-success badge badge-pill bg-light my-2 ml-3">1'=30.48cm</span>
+                                        <span class=" border border-success badge badge-pill bg-light my-2 ml-1">1yd=91.44cm</span>
+                                        <span class=" border border-success badge badge-pill bg-light my-2 ml-2">1mi=160934cm</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Divisas-->
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-header bg-danger">
+                            <h5 class="card-title text-white text-center">Conversión de Divisas</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="form">
+                                <div class="form-inline">
+                                    <label class="ml-4">Pesos mexicano $</label>
+                                    <input id="txtDivisa" type="text" class="form-control text-center" 
+                                           placeholder=" MXN "/>
+                                </div>
+                                <div class="form-inline mt-3">
+                                    <button id="btnDolarEstadounidense" class="btn btn-danger ml-2" onclick="coversionDivisa(1);">Dolar Estadounidense</button>
+                                    <button id="btnDolarCanadiense" class="btn btn-danger ml-4" onclick="coversionDivisa(2);">Dolar Canadiense</button>
+                                </div>
+                                <div class="form-inline mt-3">
+                                    <button id="btnEuro" class="btn btn-danger ml-4" onclick="coversionDivisa(3);">Euro</button>
+                                    <button id="btnPesoChileno" class="btn btn-danger ml-4" onclick="coversionDivisa(4);">Peso Chileno</button>
+                                    <button id="btnRupia" class="btn btn-danger ml-4" onclick="coversionDivisa(5);">Rupia</button>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input id="txtResultadoDivisas" placeholder="Resultado" type="text" class="form-control"/>
+                                </div>
+                                <div>
+                                    <span class=" border border-danger badge badge-pill bg-light ml-5"> 1USD=$24.04</span>
+                                    <span class=" border border-danger badge badge-pill bg-light ml-5">1CAD=$17.24</span>
+                                </div>
+                                <div>
+                                    <span class=" border border-danger badge badge-pill bg-light ml-4 my-2">1EUR=$26.2</span>
+                                    <span class=" border border-danger badge badge-pill bg-light ml-4 my-2">1CLP=$0.028</span>
+                                    <span class=" border border-danger badge badge-pill bg-light ml-4 my-2">1INR=$0.32</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script type="text/javascript" src="js/jquery/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="style/bootstrap/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+        <!-- Agregamos nuestros script-->
+        <script type="text/javascript" src="js/operaciones.js" crossorigin="anonymous"></script>
+    </body>
+</html>
